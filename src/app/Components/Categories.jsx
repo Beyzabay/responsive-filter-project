@@ -30,7 +30,7 @@ const Categories = () => {
           <div id="dropdownHelper" className="overflow-y-scroll h-32">
             <div className="ml-4 mb-4 mr-4 flex flex-col gap-4">
               <div class="flex items-center bg-gray-50">
-                <Checkbox
+                <Checkbox className="cBox"
                   {...label}
                   sx={{
                     "&.Mui-checked": {
@@ -46,7 +46,7 @@ const Categories = () => {
                   Kadın
                 </label>
               </div>
-              <div class="flex items-center bg-gray-50">
+              <div class="categories flex items-center bg-gray-50">
                 <Checkbox
                   {...label}
                   sx={{

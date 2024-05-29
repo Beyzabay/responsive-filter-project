@@ -4,9 +4,12 @@
 
 body{
     --tw-bg-opacity: 1;
-    background-color: rgb(249 250 251 / var(--tw-bg-opacity));;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 .modal{
     border-top-left-radius: 3.0rem;
     border-top-right-radius: 3.0rem;
+}
+.cBox{
+    border: none !important;
 }
