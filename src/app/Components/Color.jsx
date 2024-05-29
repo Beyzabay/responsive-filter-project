@@ -1,13 +1,34 @@
 "use client";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
-import Checkbox from "@mui/material/Checkbox";
 
 const Color = () => {
   const [dropDownColor, setdropDownColor] = useState(false);
+  const [selectedColors, setSelectedColors] = useState({});
+
   const ClickdropDownColor = () => {
     setdropDownColor(!dropDownColor);
   };
+
+  const handleClick = (color) => {
+    setSelectedColors((prevSelectedColors) => ({
+      ...prevSelectedColors,
+      [color]: !prevSelectedColors[color],
+    }));
+  };
+
+  const colors = [
+    "bg-red-500",
+    "bg-blue-500",
+    "bg-orange-500",
+    "bg-yellow-300",
+    "bg-green-500",
+    "bg-pink-500",
+    "bg-purple-500",
+    "bg-neutral-400",
+    "bg-black",
+    "bg-white",
+  ];
 
   return (
     <div>
@@ -29,36 +50,15 @@ const Color = () => {
         {dropDownColor && (
           <div id="dropdownHelper" className="overflow-y-scroll h-32">
             <div className="ml-4 mb-4 mr-4 flex flex-wrap gap-5 max-w-full">
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-red-500 border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-blue-500 border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-orange-500 border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-yellow-300 border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-green-500 border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-pink-500 border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-purple-500 border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-neutral-400 border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-black border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
-              <div class="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-white border-2 border-gray-200 hover:border-orange-500"></div>
-              </div>
+              {colors.map((color) => (
+                <div
+                  key={color}
+                  onClick={() => handleClick(color)}
+                  className={`h-10 w-10 rounded-full ${color} border-2 ${
+                    selectedColors[color] ? "border-orange-500" : "border-gray-200"
+                  } cursor-pointer hover:border-orange-500`}
+                ></div>
+              ))}
             </div>
           </div>
         )}
@@ -68,3 +68,4 @@ const Color = () => {
 };
 
 export default Color;
+
