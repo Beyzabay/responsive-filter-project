@@ -40,7 +40,7 @@ const Page = () => {
     <div className="flex flex-col items-center">
       <div className="flex flex-col mt-52 relative w-52">
         <button
-          className="bg-orange-500 rounded-full border-2 border-gray-200 text-white p-2"
+          className="bg-orange-500 rounded-full border-2 border-gray-200 text-white p-2 font-nunito"
           onClick={handleButtonClick}
         >
           Filtrele
@@ -49,10 +49,10 @@ const Page = () => {
       {state && (
         <div
           ref={modalRef}
-          className="modal max-h-96 overflow-y-auto md:hidden visible z-50 fixed inset-x-0 bottom-0 border bg-white"
+          className="modal max-h-96 overflow-y-auto md:hidden visible z-50 fixed inset-x-0 bottom-0 border border-t-2 border-gray-300 bg-white"
         >
-          <div className="sticky top-0 bg-gray-50 border-b z-10 flex justify-between items-center p-4">
-            <h1 className="font-bold text-xl flex-grow text-center">Filtre</h1>
+          <div className="sticky top-0 bg-gray-50 z-10 flex justify-between items-center p-4">
+            <h1 className="font-bold text-xl flex-grow text-center font-nunito">Filtre</h1>
             <button onClick={handleCloseModal} className="text-xl absolute right-4 top-4">
               <IoMdClose className="size-8" />
             </button>

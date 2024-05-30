@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 body{
     --tw-bg-opacity: 1;
@@ -9,7 +10,4 @@ body{
 .modal{
     border-top-left-radius: 3.0rem;
     border-top-right-radius: 3.0rem;
-}
-.cBox{
-    border: none !important;
 }

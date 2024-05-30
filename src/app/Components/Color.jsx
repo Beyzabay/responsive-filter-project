@@ -4,7 +4,7 @@ import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 
 const Color = () => {
   const [dropDownColor, setdropDownColor] = useState(false);
-  const [selectedColors, setSelectedColors] = useState({});
+  const [selectedColors, setSelectedColors] = useState([]);
 
   const ClickdropDownColor = () => {
     setdropDownColor(!dropDownColor);
@@ -44,7 +44,7 @@ const Color = () => {
             <FaChevronRight className="text-orange-500" />
           )}
         </div>
-        <div>Renk</div>
+        <div className="font-nunito">Renk</div>
       </div>
       <div>
         {dropDownColor && (

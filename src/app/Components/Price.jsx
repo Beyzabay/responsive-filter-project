@@ -24,7 +24,7 @@ const Price = () => {
             <FaChevronRight className="text-orange-500" />
           )}
         </div>
-        <div>Fiyat Aralığı</div>
+        <div className="font-nunito">Fiyat Aralığı</div>
       </div>
       <div>
         {dropDownPrice && (
